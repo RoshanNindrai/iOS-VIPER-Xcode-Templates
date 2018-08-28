@@ -47,15 +47,15 @@ final class RegisterViewController: UIViewController {
     
     // MARK: Actions
     
-    @IBAction func registerButtonActionHandler() {
+    @IBAction private func registerButtonActionHandler() {
         presenter.didSelectRegisterAction(with: usernameTextField.text, email: emailTextField.text, password: passwordTextField.text, confirmedPassword: confirmPasswordTextField.text)
     }
     
-    @IBAction func tapGestureRecognizerActionHandler() {
+    @IBAction private func tapGestureRecognizerActionHandler() {
         view.endEditing(true)
     }
     
-    @IBAction func closeButtonActionHandler() {
+    @IBAction private func closeButtonActionHandler() {
         presenter.didSelectCloseAction()
     }
     
@@ -76,7 +76,7 @@ final class RegisterViewController: UIViewController {
         )
     }
     
-    @objc func keyboardWillShow(_ notification: Notification) {
+    @objc private func keyboardWillShow(_ notification: Notification) {
         let userInfo = notification.userInfo!
         let keyboardHeight = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.height
         
@@ -91,7 +91,7 @@ final class RegisterViewController: UIViewController {
         }
     }
     
-    @objc func keyboardWillHide(_ notification: Notification) {
+    @objc private func keyboardWillHide(_ notification: Notification) {
         view.layoutIfNeeded()
         registerButtonBottomMargin.constant = 0
         view.setNeedsUpdateConstraints()
