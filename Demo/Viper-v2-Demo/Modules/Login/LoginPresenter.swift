@@ -56,7 +56,7 @@ extension LoginPresenter: LoginPresenterInterface {
             _showPasswordValidationError()
             return
         }
-        
+
         _view.showProgressHUD()
         _interactor.loginUser(with: _email, password: _password) { [weak self] (response) -> (Void) in
             self?._view.hideProgressHUD()

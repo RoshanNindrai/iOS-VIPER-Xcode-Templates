@@ -51,6 +51,7 @@ final class LoginViewController: UIViewController {
             with: emailTextField.text,
             password: passwordTextField.text
         )
+        
     }
     
     @IBAction private func _registerButtonActionHandler() {
